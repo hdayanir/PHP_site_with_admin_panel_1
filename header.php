@@ -57,7 +57,7 @@ $ayarcek =mysqli_fetch_assoc($ayarsor);
 
         <nav>
           <ul class="menu">
-            <li><a class="active" href="index.html">Home</a></li>
+            <li><a class="active" href="index.php">Home</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="faq.html">FAQ</a></li>
             <li><a href="prices.html">Prices</a></li>

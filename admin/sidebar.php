@@ -1,4 +1,3 @@
-
          <!-- Sidebar  -->
         <!-- /. NAV TOP  -->
         <nav class="navbar-default navbar-side" role="navigation">
@@ -9,9 +8,13 @@
                             <img src="assets/img/user.png" class="img-thumbnail" />
 
                             <div class="inner-text">
-                                Jhon Deo Alex
+                                Hoş geldin <?php echo $_SESSION['admin_kadi']?>
                             <br />
-                                <small>Last Login : 2 Weeks Ago </small>
+                                
+                                <small>
+                                    <?php   //  $sifre = $_SESSION['admin_sifre'];
+                                            //  echo "md5 sifreleme: "?><br>
+                                    <?php   //  echo "md5 sifreleme : ".md5($sifre) ;?> </small>
                             </div>
                         </div>
 
@@ -23,7 +26,7 @@
                     </li>
 
                     <li>
-                        <a  href="ayarlar.php?durum="><i class="fa fa-code "></i>Ayarlar</a>
+                        <a  href="ayarlar.php?durum"><i class="fa fa-code "></i>Ayarlar</a>
                     </li>
                 </ul>
             </div>

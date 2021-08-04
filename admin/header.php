@@ -33,14 +33,14 @@ $ayarcek =mysqli_fetch_assoc($ayarsor);
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html"><b style="font-size: 30px">ASOS</b><br><b style="font-size:10px">YAZILIM</b></a>
+                <a class="navbar-brand" href="index.html"><b style="font-size: 30px">Handy</b><br><b style="font-size:10px">Man</b></a>
             </div>
 
             <div class="header-right">
 
                 <a href="message-task.html" class="btn btn-info" title="New Message"><b>30 </b><i class="fa fa-envelope-o fa-2x"></i></a>
                 <a href="message-task.html" class="btn btn-primary" title="New Task"><b>40 </b><i class="fa fa-bars fa-2x"></i></a>
-                <a href="login.html" class="btn btn-danger" title="Logout"><i class="fa fa-exclamation-circle fa-2x"></i></a>
+                <a href="logout.php" class="btn btn-danger" title="Logout"><i class="fa fa-exclamation-circle "></i>Güvenli Çıkış</a>
 
             </div>
         </nav>

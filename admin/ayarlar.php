@@ -16,7 +16,7 @@
                             <?php  
                             }
                             else if($_GET['durum']=="no"){ ?>
-                                <h1 style="color:red;"class="page-subhead-line">Kayıtlar güncelleme başarısız.</h1>
+                                <h1 style="color:red;"class="page-subhead-line">Kayıtlar güncellenemedi değişiklik yapmamış olabilirsiniz.</h1>
                         
                             <?php    
                             }   
@@ -30,7 +30,7 @@
                 </div>
                 <!-- /. ROW  -->
                
-                <form action="../admin/netting/islem.php" method ="POST">
+                <form action="netting/islem.php" method ="POST">
                 <div class="col-md-12">
                     <div class="form-group col-md-8">
                         <label>Site Başlığı </label>

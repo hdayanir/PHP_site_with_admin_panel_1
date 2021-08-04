@@ -1,5 +1,5 @@
 <div id="footer-sec">
-        &copy; 2021 ASOS YAZILIM | Design By : Hüseyin DAYANIR <a href="https://asosegitim.com/" target="_blank">asosegitim.com  ||  Bu sitenin tüm hakları stajyer hüseyine aittir.</a>
+        &copy; 2021 YAZILIM | Design By : Hüseyin DAYANIR <a href="https://huseyindayanir.me/" target="_blank">huseyindayanir.me  ||  Bu sitenin tüm hakları Hüseyin DAYANIR'a aittir.</a>
     </div>
     <!-- /. FOOTER  -->
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
