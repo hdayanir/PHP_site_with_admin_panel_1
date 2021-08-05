@@ -17,15 +17,14 @@ $ayarcek =mysqli_fetch_assoc($ayarsor);
 
 <meta name="description" content="<?php echo $ayarcek['ayar_description'];?>">
 <meta name="keywords" content="<?php echo $ayarcek['ayar_keywords'];?>">
-<meta name="author" content="ASOS YAZILIM">
+<meta name="author" content="YAZILIM">
 
 <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen">
-<link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="css/styles.css" type="text/css" media="screen">
 <link rel="stylesheet" href="css/layout.css" type="text/css" media="screen">
 <script src="js/jquery-1.6.3.min.js"></script>
 <script src="js/cufon-yui.js"></script>
 <script src="js/cufon-replace.js"></script>
-<script src="js/NewsGoth_BT_400.font.js"></script>
 <script src="js/FF-cash.js"></script>
 <script src="js/script.js"></script>
 <script src="js/jquery.equalheights.js"></script>
@@ -56,13 +55,18 @@ $ayarcek =mysqli_fetch_assoc($ayarsor);
 
 
         <nav>
-          <ul class="menu">
+        <ul class="menu">
             <li><a class="active" href="index.php">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="prices.html">Prices</a></li>
-            <li><a href="staff.html">Our Staff</a></li>
-            <li class="last"><a href="contacts.html">Contacts</a></li>
+            <?php
+              $menusor =mysqli_query($baglan,"SELECT * FROM menuler");
+              while ( $menucek =mysqli_fetch_assoc($menusor) ){?>
+
+                <li><a href="<?php echo $menucek['menu_link']?>"><?php echo $menucek['menu_ad']?></a></li>
+              
+            <?php }
+        ?> 
+          
+            
           </ul>
         </nav>
 

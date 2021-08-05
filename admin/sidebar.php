@@ -28,6 +28,11 @@
                     <li>
                         <a  href="ayarlar.php?durum"><i class="fa fa-code "></i>Ayarlar</a>
                     </li>
+                    <li>
+                        <a  href="menuler.php?durum"><i class="fa fa-edit "></i>Menüler</a>
+                    </li>
+                    
+                             
                 </ul>
             </div>
         </nav>

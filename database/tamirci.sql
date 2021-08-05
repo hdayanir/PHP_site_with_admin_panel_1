@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 04 Ağu 2021, 15:58:37
+-- Üretim Zamanı: 03 Ağu 2021, 11:51:09
 -- Sunucu sürümü: 10.4.20-MariaDB
 -- PHP Sürümü: 8.0.8
 
@@ -39,7 +39,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`admin_id`, `admin_kadi`, `admin_sifre`, `admin_yetki`) VALUES
-(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', '0');
+(1, 'admin', 'admin', '0');
 
 -- --------------------------------------------------------
 
@@ -69,7 +69,7 @@ CREATE TABLE `ayarlar` (
 --
 
 INSERT INTO `ayarlar` (`ayar_id`, `ayar_logo`, `ayar_telefon`, `ayar_title`, `ayar_description`, `ayar_keywords`, `ayar_facebook`, `ayar_twitter`, `ayar_linkedin`, `ayar_footer`, `ayar_adres`, `ayar_mail`, `ayar_fax`, `ayar_yedek`) VALUES
-(0, 'images/logo.png', '0850 800 80 80 ', 'Site 1', 'Eğitim PHP', 'tamirci sitesi, php , hüseyin dayanır', 'https://facebook.com', 'https://twitter.com', 'https://www.linkedin.com', 'Copyright © Bu sitenin tüm hakları Hüseyin DAYANIRa aittir. :)', 'KONYA/ TÜRKİYE', 'hsyndayanir@gmail.com', '0850 800 80 80 ', '');
+(0, 'images/logo.png', '0850 800 80 80 ', 'Site ', 'Eğitim PHP', 'tamirci sitesi, php , hüseyin dayanır', 'https://facebook.com', 'https://twitter.com', 'https://www.linkedin.com', 'Copyright © Bu sitenin tüm hakları Hüseyin DAYANIR\'a aittir. :)', 'KONYA/ TÜRKİYE', 'hsyndayanir@gmail.com', '0850 800 80 80 ', '');
 
 --
 -- Dökümü yapılmış tablolar için indeksler

@@ -54,11 +54,57 @@ if(isset($_POST['giris'])){
         }else {
             header('Location:../login.php?login=no');
         }
-
     }
+}
 
+
+if(isset($_POST['menuKaydet'])){
+   
+        $menuEkle =mysqli_query($baglan, "insert into menuler (menu_ad,menu_link) 
+                        VALUES ('".$_POST['menu_ad']."' , '".$_POST['menu_link']."')");
+        if(mysqli_affected_rows($baglan)){
+            header('Location:../menuEkle.php?durum=ok');
+        }
+        else {
+            echo "Error updating record: " . $baglan->error;
+            header('Location:../menuEkle.php?durum=no');
+        }
+}
+
+
+
+if(isset($_POST['menuDuzenle'])){
+ 
+
+$menu_id= $_POST['menu_id'];
+$menuDuzenle =   mysqli_query( $baglan, "update menuler set     menu_ad='".$_POST['menu_ad']."', 
+                         menu_link='".$_POST['menu_link']."'    where menu_id ='$menu_id'");
+if(mysqli_affected_rows($baglan)){
+    
+    header("Location:../menuDuzenle.php?durum=ok&menu_id=$menu_id"); //get metodu atandi.
+}
+else{
+    
+    header("Location:../menuDuzenle.php?durum=no&menu_id=$menu_id");
+}
+}
+
+
+
+if($_GET['menuSil']=="ok"){
+    $menuSil =   mysqli_query( $baglan, "delete from menuler where menu_id ='".$_GET['menu_id']."'");
+if(mysqli_affected_rows($baglan)){
+
+header("Location:../menuler.php?durum=ok"); //get metodu atandi.
+}
+else{
+
+    header("Location:../menuler.php?durum=no"); //get metodu atandi.
+}
 
 }
+
+
 
 
 ?>
