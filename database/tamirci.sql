@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 03 Ağu 2021, 11:51:09
+-- Üretim Zamanı: 05 Ağu 2021, 12:31:29
 -- Sunucu sürümü: 10.4.20-MariaDB
 -- PHP Sürümü: 8.0.8
 
@@ -39,7 +39,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`admin_id`, `admin_kadi`, `admin_sifre`, `admin_yetki`) VALUES
-(1, 'admin', 'admin', '0');
+(1, 'admin', '21232f297a57a5a743894a0e4a801fc3', '0');
 
 -- --------------------------------------------------------
 
@@ -69,7 +69,30 @@ CREATE TABLE `ayarlar` (
 --
 
 INSERT INTO `ayarlar` (`ayar_id`, `ayar_logo`, `ayar_telefon`, `ayar_title`, `ayar_description`, `ayar_keywords`, `ayar_facebook`, `ayar_twitter`, `ayar_linkedin`, `ayar_footer`, `ayar_adres`, `ayar_mail`, `ayar_fax`, `ayar_yedek`) VALUES
-(0, 'images/logo.png', '0850 800 80 80 ', 'Site ', 'Eğitim PHP', 'tamirci sitesi, php , hüseyin dayanır', 'https://facebook.com', 'https://twitter.com', 'https://www.linkedin.com', 'Copyright © Bu sitenin tüm hakları Hüseyin DAYANIR\'a aittir. :)', 'KONYA/ TÜRKİYE', 'hsyndayanir@gmail.com', '0850 800 80 80 ', '');
+(0, 'images/logo.png', '0850 800 80 80 ', 'Site', 'Eğitim PHP', 'tamirci sitesi, php , hüseyin dayanır', 'https://facebook.com', 'https://twitter.com', 'https://www.linkedin.com', 'Copyright © Bu sitenin tüm hakları Hüseyin DAYANIRa aittir. :)', 'KONYA/ TÜRKİYE', 'hsyndayanir@gmail.com', '0850 800 80 80 ', '');
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `menuler`
+--
+
+CREATE TABLE `menuler` (
+  `menu_id` int(11) NOT NULL,
+  `menu_ad` varchar(50) COLLATE utf8_turkish_ci NOT NULL,
+  `menu_link` varchar(500) COLLATE utf8_turkish_ci NOT NULL,
+  `menu_ek` varchar(50) COLLATE utf8_turkish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
+
+--
+-- Tablo döküm verisi `menuler`
+--
+
+INSERT INTO `menuler` (`menu_id`, `menu_ad`, `menu_link`, `menu_ek`) VALUES
+(1, 'Hakkımızda', 'https://www.huseyindayanir.me', ''),
+(16, 'Youtube', 'https://www.youtube.com/', ''),
+(17, 'GitHub', 'https://www.github.com', ''),
+(18, 'İletisim', 'iletisim.php', '');
 
 --
 -- Dökümü yapılmış tablolar için indeksler
@@ -88,6 +111,12 @@ ALTER TABLE `ayarlar`
   ADD PRIMARY KEY (`ayar_id`);
 
 --
+-- Tablo için indeksler `menuler`
+--
+ALTER TABLE `menuler`
+  ADD PRIMARY KEY (`menu_id`);
+
+--
 -- Dökümü yapılmış tablolar için AUTO_INCREMENT değeri
 --
 
@@ -96,6 +125,12 @@ ALTER TABLE `ayarlar`
 --
 ALTER TABLE `admin`
   MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- Tablo için AUTO_INCREMENT değeri `menuler`
+--
+ALTER TABLE `menuler`
+  MODIFY `menu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
