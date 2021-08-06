@@ -91,7 +91,7 @@ else{
 
 
 
-if($_GET['menuSil']=="ok"){
+if(isset($_GET['menuSil'])=="ok"){
     $menuSil =   mysqli_query( $baglan, "delete from menuler where menu_id ='".$_GET['menu_id']."'");
 if(mysqli_affected_rows($baglan)){
 
@@ -105,6 +105,65 @@ else{
 }
 
 
+
+if(isset($_POST['sliderKaydet'])){
+    $uploads_dir ="../uploads";
+    @$tmp_name = $_FILES['sliderGorsel']['tmp_name'];
+    @$name =$_FILES['sliderGorsel']['name'];
+    $benzersizSayi1 = rand(20000,32000);
+    $benzersizSayi2 = rand(20000,32000);
+    $benzersizSayi3 = rand(20000,32000);
+    $benzersizSayi4 = rand(20000,32000);
+    $benzersizAd = $benzersizSayi1.$benzersizSayi2.$benzersizSayi3.$benzersizSayi4;
+    $refimgyol = substr ($uploads_dir , 3)."/".$benzersizAd.$name;
+    @move_uploaded_file($tmp_name,"$uploads_dir/$benzersizAd$name");
+    $sliderEkle= mysqli_query( $baglan, "insert into slider(slider_ad,slider_url,slider_resimyol,slider_sira)
+    values ('".$_POST['slider_ad']."','".$_POST['slider_url']."','".$refimgyol."','".$_POST['slider_sira']."')");
+if(mysqli_affected_rows($baglan)){
+header("Location:../sliderEkle.php?durum=ok"); //get metodu atandi.
+}
+else{
+    header("Location:../sliderEkle.php?durum=no"); //get metodu atandi.
+}
+}
+
+
+
+
+
+if(isset($_GET['sliderSil'])=="ok"){
+    $sliderSil =   mysqli_query( $baglan, "delete from slider where slider_id ='".$_GET['slider_id']."'");
+if(mysqli_affected_rows($baglan)){
+
+header("Location:../slider.php?durum=ok"); //get metodu atandi.
+}
+else{
+
+    header("Location:../slider.php?durum=no"); //get metodu atandi.
+}
+
+}
+
+if(isset($_POST['SıraGuncelle'])){
+ 
+
+    $slider_id=$_POST['slider_id'];
+    $slider_sira=$_POST['slider_sira'];
+    $sliderSira =   mysqli_query( $baglan, "update slider  set     slider_sira='$slider_sira' 
+                                where slider_id='".$_POST['slider_id']."'");
+                               /*echo $_POST['slider_sira'];
+                                echo "<br>";
+                                echo $sliderSira;
+                                exit();*/
+    if(mysqli_affected_rows($baglan)){
+
+        header("Location:../slider.php?durum=ok1&slider_id=$slider_id"); //get metodu atandi.
+    }
+    else{
+
+        header("Location:../slider.php?durum=no1&slider_id=$slider_id"); //get metodu atandi.
+    }
+}
 
 
 ?>

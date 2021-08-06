@@ -29,7 +29,7 @@ $menucek =mysqli_fetch_assoc($menusor) ;
                                 <h1 class="page-subhead-line">Sitenizdeki <b><?php echo $menucek['menu_ad']?></b> Menüsünü Düzenliyorsunuz.</h1>
                             <?php } ?>
 
-                            <a href="menuler.php?durum"><button class="btn btn-success">Menülere Geri Dön </button></a>
+                            <a href="menuler.php?durum"><button class="btn btn-success">Geri Dön</button></a>
                             <hr> 
                             
 

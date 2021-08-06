@@ -59,13 +59,20 @@ $ayarcek =mysqli_fetch_assoc($ayarsor);
             <li><a class="active" href="index.php">Home</a></li>
             <?php
               $menusor =mysqli_query($baglan,"SELECT * FROM menuler");
-              while ( $menucek =mysqli_fetch_assoc($menusor) ){?>
+              $menusay = mysqli_num_rows($menusor);
+              $say=0;
+              while ( $menucek =mysqli_fetch_assoc($menusor) ){ $say++;?>
 
-                <li><a href="<?php echo $menucek['menu_link']?>"><?php echo $menucek['menu_ad']?></a></li>
+                <li class="<?php 
+                  if($menusay == $say){
+                    echo "last";
+                  }
+                ?>"><a href="<?php echo $menucek['menu_link']?>"><?php echo $menucek['menu_ad']?></a></li>
               
             <?php }
+            
         ?> 
-          
+           
             
           </ul>
         </nav>
@@ -77,9 +84,17 @@ $ayarcek =mysqli_fetch_assoc($ayarsor);
       <div class="wrapper">
         <div class="slider">
           <ul class="items">
-            <li><img src="images/slider-img1.jpg" alt=""></li>
-            <li><img src="images/slider-img2.jpg" alt=""></li>
-            <li><img src="images/slider-img3.jpg" alt=""></li>
+
+
+          <?php
+             $slidersor =mysqli_query($baglan,"SELECT * FROM slider order by slider_sira ASC");
+              while ( $slidercek =mysqli_fetch_assoc($slidersor)){ ?>
+            <li><img src="admin/<?php echo $slidercek['slider_resimyol'];?>" alt="<?php echo $slidercek['slider_ad'] ?>"></li>
+                
+            <?php } ?>
+
+            <!--<li> <img src="admin/uploads/22713203842420222923slider1.jpg"></li>  -->
+
           </ul>
         </div>
         <a class="prev">prev</a> <a class="next">next</a>

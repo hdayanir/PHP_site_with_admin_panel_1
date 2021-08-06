@@ -31,7 +31,9 @@
                     <li>
                         <a  href="menuler.php?durum"><i class="fa fa-edit "></i>Menüler</a>
                     </li>
-                    
+                    <li>
+                        <a  href="slider.php?durum"><i class="fa fa-square-o "></i>Slider</a>
+                    </li>
                              
                 </ul>
             </div>

@@ -11,7 +11,7 @@
     <script src="assets/js/jquery.metisMenu.js"></script>
        <!-- CUSTOM SCRIPTS -->
     <script src="assets/js/custom.js"></script>
-    
+    <script src="assets/js/bootstrap-fileupload.js"></script>
 
 
 </body>

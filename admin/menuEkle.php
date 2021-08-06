@@ -24,7 +24,7 @@
                                 <h1 class="page-subhead-line">Sitenize menü ekliyorsunuz.</h1>
                             <?php } ?>
                             
-                            <a href="menuler.php?durum"><button class="btn btn-success">Menülere Geri Dön </button></a>
+                            <a href="menuler.php?durum"><button class="btn btn-success">Geri Dön </button></a>
                             <hr>        
                             
                     </div>
