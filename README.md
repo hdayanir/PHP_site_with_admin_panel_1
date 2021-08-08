@@ -23,7 +23,7 @@ Projeyi başarılı bir şekilde kurarsanız bir giriş sayfası göreceksiniz. 
 
 - Şifre : `admin`
 
-## Database İşlemleri İçin;
+## Database İşlemleri
 
 - admin/netting/baglan.php dosyası açarak kendi veritabanınıza göre ayarları değiştirmelisiniz.
 
