@@ -166,4 +166,59 @@ if(isset($_POST['SıraGuncelle'])){
 }
 
 
+
+
+if(isset($_POST['sayfaKaydet'])){
+    $zaman = date('Y-m-d H:i');
+   
+    $sayfaEkle =mysqli_query($baglan, "insert into sayfalar (sayfa_ad,sayfa_icerik,sayfa_sira,sayfa_anasayfa,sayfa_tarih) 
+                    VALUES ('".$_POST['sayfa_ad']."' , '".$_POST['sayfa_icerik']."'
+                          , '".$_POST['sayfa_sira']."', '".$_POST['sayfa_anasayfa']."', '".$zaman."')");
+    if(mysqli_affected_rows($baglan)){
+        header('Location:../sayfaEkle.php?durum=ok');
+    }
+    else {
+        echo "Error updating record: " . $baglan->error;
+        header('Location:../sayfaEkle.php?durum=no');
+    }
+}
+
+
+
+
+
+if(isset($_GET['sayfaSil'])=="ok"){
+    $menuSil =   mysqli_query( $baglan, "delete from sayfalar where sayfa_id ='".$_GET['sayfa_id']."'");
+if(mysqli_affected_rows($baglan)){
+
+header("Location:../sayfalar.php?durum=ok"); //get metodu atandi.
+}
+else{
+
+    header("Location:../sayfalar.php?durum=no"); //get metodu atandi.
+}
+
+}
+
+
+
+
+if(isset($_POST['sayfaDuzenle'])){
+ 
+
+    $sayfa_id= $_POST['sayfa_id'];
+    $sayfaDuzenle =   mysqli_query( $baglan, "update sayfalar set       sayfa_ad='".$_POST['sayfa_ad']."', 
+                            sayfa_icerik='".$_POST['sayfa_icerik']."',  sayfa_sira='".$_POST['sayfa_sira']."'
+                            ,  sayfa_anasayfa='".$_POST['sayfa_anasayfa']."'    where sayfa_id ='$sayfa_id'");
+    if(mysqli_affected_rows($baglan)){
+        
+        header("Location:../sayfaDuzenle.php?durum=ok&sayfa_id=$sayfa_id"); //get metodu atandi.
+    }
+    else{
+        
+        header("Location:../sayfaDuzenle.php?durum=no&sayfa_id=$sayfa_id");
+    }
+    }
+    
+
 ?>

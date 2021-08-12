@@ -1,4 +1,5 @@
 <?php include 'netting/baglan.php' ?>
+
 <?php
 $ayarsor =mysqli_query($baglan,"SELECT * FROM ayarlar");
 $ayarcek =mysqli_fetch_assoc($ayarsor);

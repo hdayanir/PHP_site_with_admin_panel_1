@@ -22,6 +22,7 @@ $ayarcek =mysqli_fetch_assoc($ayarsor);
 <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen">
 <link rel="stylesheet" href="css/styles.css" type="text/css" media="screen">
 <link rel="stylesheet" href="css/layout.css" type="text/css" media="screen">
+
 <script src="js/jquery-1.6.3.min.js"></script>
 <script src="js/cufon-yui.js"></script>
 <script src="js/cufon-replace.js"></script>

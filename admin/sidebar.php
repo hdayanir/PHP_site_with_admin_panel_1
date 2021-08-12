@@ -34,6 +34,9 @@
                     <li>
                         <a  href="slider.php?durum"><i class="fa fa-square-o "></i>Slider</a>
                     </li>
+                    <li>
+                        <a href="sayfalar.php?durum"><i class="fa fa-desktop "></i>Sayfalar </a>
+                    </li>
                              
                 </ul>
             </div>
