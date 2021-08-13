@@ -12,7 +12,7 @@
   </div>
 </footer>
 <script>Cufon.now();</script>
-<script>
+<script> 
 $(window).load(function () {
     $('.slider')._TMS({
         duration: 800,

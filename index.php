@@ -1,29 +1,36 @@
-<?php include 'header.php' ?>
+<?php 
+include 'header.php' ;
+include 'slider.php'
+?>
     <!--==============================aside================================-->
-    <aside>
-      <div class="wrapper">
+    
+    <?php
+        $sayfasor =mysqli_query($baglan,"SELECT * FROM sayfalar where sayfa_anasayfa='1' order by sayfa_sira asc");
+        while ( $sayfacek =mysqli_fetch_assoc($sayfasor) ){?>
 
 
-
-
-
-        <div class="column-1">
+        <div style="padding-left:12px; padding-top:10px;" class="column-2">
           <div class="box">
             <div class="aligncenter">
-              <h4>Electrical Services</h4>
+              <h4><?php echo $sayfacek['sayfa_ad']?></h4>
             </div>
             <div class="box-bg maxheight">
               <div class="padding">
-                <h6 class="color-1">Sed ut perspiciatis unde omnis</h6>
-                <p>Linior voluptatm accusantium doloremque laudantium totarem aperiam.</p>
+                <p><?php echo substr($sayfacek['sayfa_icerik'],0,200)?></p>
               </div>
-              <div class="aligncenter"> <a class="button" href="#">Devamını Oku</a> </div>
+              <div class="aligncenter"> <a class="button" href="sayfaDetay.php?sayfa_id=<?php echo $sayfacek['sayfa_id']?>">Devamını Oku</a> </div>
             </div>
           </div>
         </div>
+ 
+
+       <?php } ?>
+        
+       <aside>
+      <div class="wrapper">
 
 
-       
+      
         
       </div>
     </aside>
