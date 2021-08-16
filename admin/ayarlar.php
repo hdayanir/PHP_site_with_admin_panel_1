@@ -1,7 +1,6 @@
 <?php include 'header.php' ?>
 <?php include 'sidebar.php' ?>
 
-
 <!-- /. NAV SIDE  -->
 <div id="page-wrapper">
             <div id="page-inner">

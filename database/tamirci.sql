@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 12 Ağu 2021, 15:53:17
+-- Üretim Zamanı: 16 Ağu 2021, 08:51:11
 -- Sunucu sürümü: 10.4.20-MariaDB
 -- PHP Sürümü: 8.0.8
 
@@ -74,6 +74,29 @@ INSERT INTO `ayarlar` (`ayar_id`, `ayar_logo`, `ayar_telefon`, `ayar_title`, `ay
 -- --------------------------------------------------------
 
 --
+-- Tablo için tablo yapısı `haber`
+--
+
+CREATE TABLE `haber` (
+  `haber_id` int(11) NOT NULL,
+  `haber_ad` varchar(100) COLLATE utf8_turkish_ci NOT NULL,
+  `haber_detay` varchar(2000) COLLATE utf8_turkish_ci NOT NULL,
+  `haber_resimyol` varchar(500) COLLATE utf8_turkish_ci NOT NULL,
+  `haber_zaman` varchar(250) COLLATE utf8_turkish_ci NOT NULL,
+  `haber_hit` varchar(50) COLLATE utf8_turkish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
+
+--
+-- Tablo döküm verisi `haber`
+--
+
+INSERT INTO `haber` (`haber_id`, `haber_ad`, `haber_detay`, `haber_resimyol`, `haber_zaman`, `haber_hit`) VALUES
+(2, 'haber1', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 'uploads/haberler/20734228202710130364zsiyahok.jpg', '2021-08-15 15:04', '4'),
+(3, 'haber2', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 'uploads/haberler/22573218182565130774zsiyahok.jpg', '2021-08-15 15:07', '71');
+
+-- --------------------------------------------------------
+
+--
 -- Tablo için tablo yapısı `menuler`
 --
 
@@ -90,7 +113,7 @@ CREATE TABLE `menuler` (
 
 INSERT INTO `menuler` (`menu_id`, `menu_ad`, `menu_link`, `menu_ek`) VALUES
 (1, 'Hakkımızda', 'https://www.huseyindayanir.me', ''),
-(30, 'Menu', 'admin/ayarlar.php', ''),
+(30, 'Haberler', 'haberler.php', ''),
 (33, 'İletişim', 'iletisim', ''),
 (34, 'a', 'https://www.', '');
 
@@ -140,8 +163,7 @@ CREATE TABLE `slider` (
 INSERT INTO `slider` (`slider_id`, `slider_ad`, `slider_resimyol`, `slider_url`, `slider_sira`) VALUES
 (3, 'Slider1', 'uploads/22713203842420222923slider1.jpg', '', '1'),
 (4, 'Slider2', 'uploads/29137249792946426105slider2.jpg', '', '3'),
-(6, 'Slider3', 'uploads/26023264702639628056slider3.jpg', '', '2'),
-(9, 'Slider5', 'uploads/31973315362911124651slider3.jpg', '', '4');
+(6, 'Slider3', 'uploads/26023264702639628056slider3.jpg', '', '2');
 
 --
 -- Dökümü yapılmış tablolar için indeksler
@@ -158,6 +180,12 @@ ALTER TABLE `admin`
 --
 ALTER TABLE `ayarlar`
   ADD PRIMARY KEY (`ayar_id`);
+
+--
+-- Tablo için indeksler `haber`
+--
+ALTER TABLE `haber`
+  ADD PRIMARY KEY (`haber_id`);
 
 --
 -- Tablo için indeksler `menuler`
@@ -188,6 +216,12 @@ ALTER TABLE `admin`
   MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- Tablo için AUTO_INCREMENT değeri `haber`
+--
+ALTER TABLE `haber`
+  MODIFY `haber_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- Tablo için AUTO_INCREMENT değeri `menuler`
 --
 ALTER TABLE `menuler`
@@ -203,7 +237,7 @@ ALTER TABLE `sayfalar`
 -- Tablo için AUTO_INCREMENT değeri `slider`
 --
 ALTER TABLE `slider`
-  MODIFY `slider_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `slider_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

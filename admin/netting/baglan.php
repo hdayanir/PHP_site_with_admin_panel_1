@@ -1,4 +1,5 @@
 <?php
+error_reporting();
 $host='localhost';
 $user='root';
 $pass='';
@@ -10,4 +11,5 @@ mysqli_query($baglan,"SET CHARACTER SET utf8");
 mysqli_query($baglan,"SET COLLATION_CONNECTION = 'utf8_general_ci'");
 session_start();
 $_SESSION["baglan"]=$baglan;
+
 ?>

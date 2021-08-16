@@ -1,8 +1,21 @@
-<?php include 'netting/baglan.php' ?>
+<?php include 'netting/baglan.php' ;
+//include 'function.php';
+
+?>
 
 <?php
 $ayarsor =mysqli_query($baglan,"SELECT * FROM ayarlar");
 $ayarcek =mysqli_fetch_assoc($ayarsor);
+
+
+if(!isset($_SESSION['admin_kadi'])){ //session bossa buraya gonder.
+    header('Location:login.php');
+    //cookie, kullanıcı bilgisayarinin tarayıicisinda tutulan cerezdir.
+    //session ise hostumunda bulunan serverda tutulan degiskenlerdir. session tarayiciyi kapatinca silinir.
+}
+//session_destroy();
+
+//girisKontrol($baglan);
 ?> 
 
 

@@ -2,12 +2,7 @@
 include 'header.php';
 include 'sidebar.php'; 
 
-if(!isset($_SESSION['admin_kadi'])){ //session bossa buraya gonder.
-    header('Location:login.php');
-    //cookie, kullanıcı bilgisayarinin tarayıicisinda tutulan cerezdir.
-    //session ise hostumunda bulunan serverda tutulan degiskenlerdir. session tarayiciyi kapatinca silinir.
-}
-//session_destroy();
+
 ?>
 
 <!-- /. NAV SIDE  -->

@@ -87,7 +87,8 @@ if(!isset($_SESSION['admin_kadi'])){ //session bossa buraya gonder.
                                                 
                                             </div>
                                             </form></td>
-                                            <td ><a href="netting/islem.php?slider_id=<?php echo $slidercek['slider_id'];?>&sliderSil=ok">
+                                            <td ><a href="netting/islem.php?slider_id=<?php echo $slidercek['slider_id'];?>&sliderSil=ok
+                                                        &sliderresimsil=<?php echo $slidercek['slider_resimyol']?>">
                                                 <button class="btn btn-danger">Sil</button></a></td>
 
                                         </tr>

@@ -1,4 +1,6 @@
 <?php include 'baglan.php';
+
+
 if(isset($_POST['ayarkaydet'])){
     /*
 $id=0;
@@ -135,7 +137,9 @@ if(isset($_GET['sliderSil'])=="ok"){
     $sliderSil =   mysqli_query( $baglan, "delete from slider where slider_id ='".$_GET['slider_id']."'");
 if(mysqli_affected_rows($baglan)){
 
-header("Location:../slider.php?durum=ok"); //get metodu atandi.
+    header("Location:../slider.php?durum=ok"); //get metodu atandi.
+    $resimSil= $_GET['sliderresimsil'];
+    unlink ("../$resimSil");
 }
 else{
 
@@ -220,5 +224,54 @@ if(isset($_POST['sayfaDuzenle'])){
     }
     }
     
+
+
+
+    
+if(isset($_GET['haberSil'])=="ok"){
+    $haberSil =   mysqli_query( $baglan, "delete from haber where haber_id ='".$_GET['haber_id']."'");
+if(mysqli_affected_rows($baglan)){
+
+header("Location:../haberler.php?durum=ok"); //get metodu atandi.
+}
+else{
+
+    header("Location:../haberler.php?durum=no"); //get metodu atandi.
+}
+
+}
+
+
+
+
+
+if(isset($_POST['haberKaydet'])){
+    $uploads_dir ="../uploads/haberler";
+    @$tmp_name = $_FILES['haber_resimyol']['tmp_name'];
+    @$name =$_FILES['haber_resimyol']['name'];
+    $benzersizSayi1 = rand(20000,32000);
+    $benzersizSayi2 = rand(20000,32000);
+    $benzersizSayi3 = rand(20000,32000);
+    $benzersizSayi4 = rand(20000,32000);
+    $benzersizAd = $benzersizSayi1.$benzersizSayi2.$benzersizSayi3.$benzersizSayi4;
+    $refimgyol = substr ($uploads_dir , 3)."/".$benzersizAd.$name;
+    @move_uploaded_file($tmp_name,"$uploads_dir/$benzersizAd$name");
+
+    $haber_zaman = date('Y-m-d H:i');
+    $haberEkle= mysqli_query( $baglan, "insert into haber(haber_ad,haber_detay,haber_resimyol,haber_zaman)
+    values ('".$_POST['haber_ad']."','".$_POST['haber_detay']."','".$refimgyol."','".$haber_zaman."')");
+if(mysqli_affected_rows($baglan)){
+header("Location:../haberEkle.php?durum=ok"); //get metodu atandi.
+}
+else{
+    header("Location:../haberEkle.php?durum=no"); //get metodu atandi.
+}
+}
+
+
+
+
+
+
 
 ?>

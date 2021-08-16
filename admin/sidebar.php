@@ -37,6 +37,9 @@
                     <li>
                         <a href="sayfalar.php?durum"><i class="fa fa-desktop "></i>Sayfalar </a>
                     </li>
+                    <li>
+                        <a href="haberler.php?durum"><i class="fa fa-coffee"></i>Haberler</a>
+                    </li>
                              
                 </ul>
             </div>
